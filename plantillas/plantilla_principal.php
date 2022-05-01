@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,7 @@
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Document</title>
+    <title>Búsqueda de Gugul</title>
 
     <style>
     .vertical-center {
@@ -27,7 +27,7 @@
     <div class="container-fluid my-4">
       <div class="row justify-content-end">
         <div class="col-11"></div>
-        <div class="col">
+        <div class="col-lg-1 order-last end-0">
           <a href="#" class="link-primary">Iniciar sesión</a>
         </div>
       </div>
@@ -39,13 +39,18 @@
           <img src="gugul_logo.png" class="card-img-top" alt="logo" style="max-width: 540px;">
       </div>
       <div class="row justify-content-center">
-        <input class="form-control" list="opcionesBusqueda" id="busqueda1" placeholder="Escribe para buscar..." style="max-width: 590px;">
-        <datalist id="opcionesBusqueda">
-          <option value="Perros">
-          <option value="Gatos">
-          <option value="Flores">
-        </datalist>
+        <div class="input-group justify-content-center">
+          <input class="form-control" list="opcionesBusqueda" id="busqueda1" placeholder="Escribe para buscar..." style="max-width: 590px;">
+          <datalist id="opcionesBusqueda">
+            <option value="Perros">
+            <option value="Gatos">
+            <option value="Flores">
+          </datalist>
+          <button class="btn btn-outline-primary" type="button" id="botonBusqueda">Buscar</button>
+        </div>
       </div>
     </div>
+
+    <!--Falta la parte de resultados-->
 </body>
 </html>
