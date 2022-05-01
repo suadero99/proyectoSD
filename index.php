@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+<H1>Gugul</H1>
+<a href="login.php">Iniciar sesión</a>
+=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,3 +19,4 @@
     
 </body>
 </html>
+>>>>>>> 62dc4254c2701e611b0e517893a027d6141f7374
