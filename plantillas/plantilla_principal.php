@@ -26,9 +26,37 @@
     <!--logo y barra de búsqueda-->
     <div class="container-fluid my-4">
       <div class="row justify-content-end">
-        <div class="col-11"></div>
-        <div class="col-lg-1 order-last end-0">
-          <a href="#" class="link-primary">Iniciar sesión</a>
+        <div class="col-10">
+
+        </div>
+        <div class="col-lg-2 order-last end-0">
+          <!--<a href="#" class="link-primary">Iniciar sesión</a>-->
+          <p>
+            <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLogin" aria-expanded="false" aria-controls="collapseExample">
+              Iniciar Sesión
+            </button>
+          </p>
+          <div class="collapse" id="collapseLogin">
+            <div class="card card-body" style="max-width: 360px;">
+              <?php
+
+                if(!empty($_GET['mensaje'])){
+                    $mensaje="Usuario o contraseña incorrecto(s)";
+                } else {
+                    $mensaje="";
+                }
+
+              ?>
+              <form action="includes/valida.php" method="post">
+                  <p>Usuario:</p>
+                  <input name="user" type="text">
+                  <p>Contraseña:</p>
+                  <input name="pass" type="password">
+                  <input type="submit" value="Ingresar">
+                  <?php echo $mensaje; ?>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -51,6 +79,5 @@
       </div>
     </div>
 
-    <!--Falta la parte de resultados-->
 </body>
 </html>
