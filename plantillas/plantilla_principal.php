@@ -24,8 +24,13 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     
     <!--logo y barra de búsqueda-->
-    <div class="container-fluid vertical-center">
-      
+    <div class="container-fluid my-4">
+      <div class="row justify-content-end">
+        <div class="col-11"></div>
+        <div class="col">
+          <a href="#" class="link-primary">Iniciar sesión</a>
+        </div>
+      </div>
     </div>
 
     <!--logo y barra de búsqueda-->
