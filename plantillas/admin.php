@@ -46,24 +46,27 @@
           <h5>Estadísticas de anuncios</h5>
         </div>
         <div class="card-group">
+          <!--Nombre empresa-->
           <div class="card">
-            <div class="card-body">
+            <div class="card-body text-center">
               <h5 class="card-title">Empresa</h5>
               <p class="card-text">Nombre de empresa</p>
             </div>
           </div>
+          <!--Imagen de anuncio-->
           <div class="card">
-            <div class="card-body">
-              <img src="..." class="card-img-top" alt="anuncio mostrado">
-              <h5 class="card-title">Anuncio mostrado</h5>
+            <div class="card-body text-center">
+              <h5 class="card-title">Anuncio mostrado</h5>  
+              <img src="prueba.jpg" class="rounded" alt="anuncio mostrado">
               <p class="card-text"></p>
               <div class="card-footer">
                 <small class="text-muted">Imagen perteneciente al anuncio</small>
               </div>
             </div>
           </div>
+          <!--Contador de clicks-->
           <div class="card">
-            <div class="card-body">
+            <div class="card-body text-center">
               <h5 class="card-title">Número de clicks</h5>
               <p class="card-text">#### clicks</p>
             </div>
