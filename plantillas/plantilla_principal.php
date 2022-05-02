@@ -26,9 +26,7 @@
     <!--Lo necesario para Login-->
     <div class="container-fluid my-4">
       <div class="row justify-content-end">
-        <div class="col-10">
-
-        </div>
+        <div class="col-10"> </div>
         <div class="col-lg-2 order-last end-0">
           <!--<a href="#" class="link-primary">Iniciar sesión</a>-->
           <p>
@@ -64,7 +62,7 @@
     <!--logo y barra de búsqueda-->
     <div class="container-fluid vertical-center">
       <div class="row justify-content-center">
-          <img src="gugul_logo.png" class="card-img-top" alt="logo" style="max-width: 540px;">
+          <img src="gugul_logo_540.png" class="rounded" alt="logo" style="max-width: 540px;">
       </div>
       <div class="row justify-content-center">
         <div class="input-group justify-content-center">

@@ -17,7 +17,7 @@
   <div class="containter-fluid">
     <div class="row align-items-center">
       <div class="col-lg-3">
-        <img src="gugul_logo.png" class="card-img-top" alt="logo" style="max-width: 240px;">
+        <img src="gugul_logo_240.png" class="rounded" alt="logo" style="max-width: 240px;">
       </div>
       <div class="col-lg-6">
         <div class="input-group">
