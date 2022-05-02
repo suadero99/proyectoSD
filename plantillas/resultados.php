@@ -35,7 +35,7 @@
         Hola, usuario
       </div>
       <div class="col-lg-1">
-        foto_usuario
+        <img src="pp.jpg" class="img-thumbnail" alt="profile pic" style="max-width: 50px; border-radius: 50%;">
       </div>
     </div>
   </div>
