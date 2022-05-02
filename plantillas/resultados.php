@@ -27,7 +27,7 @@
             <option value="Gatos">
             <option value="Flores">
           </datalist>
-          <button class="btn btn-outline-primary" type="button" id="botonBusqueda">Buscar</button>
+          <button class="btn btn-outline-primary" type="button" id="botonBusqueda">🔎</button>
         </div>
       </div>
       
