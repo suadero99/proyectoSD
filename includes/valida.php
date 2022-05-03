@@ -30,10 +30,10 @@
             $_SESSION["apellidos"]=apellidos($id);
             $_SESSION["admin"]=admin($id);
             echo $_SESSION["nombre"];
-            header("location: ../index2.php");
+            header("location: ../index.php");
          
       }else {
-         header("location: ../login.php?mensaje=error");
+         header("location: ../index.php?mensaje=error");
       }
    }
 ?>
