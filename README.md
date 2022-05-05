@@ -18,6 +18,10 @@ y la forma de contar a los mismos, pues ya se tiene el inicio de sesión
 y las imágenes de los anuncios a mostrar. Hace falta la carga inicial
 de la BD para las imágenes y links a utilizar.
 
+El modelo relacional es el siguiente:
+<img src="https://github.com/suadero99/proyectoSD/blob/main/pruebasAvance/modelo_SD_Photon.jpg" align="center"
+     alt="Búsqueda de Gugul">
+
 * Podemos observar La página de inicio en la que podemos realizar una búsqueda.
 <img src="https://github.com/suadero99/proyectoSD/blob/main/pruebasAvance/gugul_index.png" align="center"
      alt="Búsqueda de Gugul">
