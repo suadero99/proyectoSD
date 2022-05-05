@@ -24,9 +24,15 @@ de la BD para las imágenes y links a utilizar.
 * Al presionar el botón de "Iniciar sesión" podemos conectar con el panel de administrador.
 <img src="https://github.com/suadero99/proyectoSD/blob/main/pruebasAvance/gugul_slide.png" align="center"
      alt="Inicio de sesión">
+* Si ingresamos un usuario y contraseña correctos, veremos que se actualiza el botón.
+<img src="https://github.com/suadero99/proyectoSD/blob/main/pruebasAvance/boton_panel.png" align="center"
+     alt="Inicio de sesión">
 * El panel de administrador se verá de la siguiente manera.
 <img src="https://github.com/suadero99/proyectoSD/blob/main/pruebasAvance/panel_admin.png" align="center"
      alt="Panel Admin">
+* Y así se verá con sesión iniciada (aún no se implementa un contador para los clicks).
+<img src="https://github.com/suadero99/proyectoSD/blob/main/pruebasAvance/admin_sesion.png" align="center"
+     alt="Resultados">
 * La página de resultados actualmente se ve sencilla porque solo es un ejemplo sin enlaces reales.
 <img src="https://github.com/suadero99/proyectoSD/blob/main/pruebasAvance/resultados.png" align="center"
      alt="Resultados">
