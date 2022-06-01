@@ -1,6 +1,6 @@
 <?php
     $host = "localhost";
-    $bd = "proysdphoton";
+    $bd = "sdproyphoton";
     $user = "root";
     $pass = "";
 
