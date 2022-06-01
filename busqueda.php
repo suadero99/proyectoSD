@@ -30,17 +30,19 @@ $count = mysqli_num_rows($result);
   <div class="container-fluid">
     <div class="row align-items-center">
       <div class="col-lg-3">
-        <img src="img/gugul_logo_240.png" class="rounded" alt="logo" style="max-width: 240px;">
+        <a href="index.php"><img src="img/gugul_logo_240.png" class="rounded" alt="logo" style="max-width: 240px;"></a>
       </div>
       <div class="col-lg-6">
         <div class="input-group">
-          <input class="form-control" list="opcionesBusqueda" id="busqueda1" placeholder="Escribe para buscar..." value="<?php echo $keyword; ?>">
+        <form action="busqueda.php" method="POST">
+          <input class="form-control" list="opcionesBusqueda" id="busqueda1" placeholder="Escribe para buscar..." value="<?php echo $keyword; ?>" name="keyword">
           <datalist id="opcionesBusqueda">
             <option value="Perros">
             <option value="Gatos">
             <option value="Flores">
           </datalist>
-          <button class="btn btn-outline-primary" type="button" id="botonBusqueda">🔎</button>
+          <input class="btn btn-outline-primary" type="submit" id="botonBusqueda" value="🔎">
+        </form>
         </div>
       </div>
       
@@ -60,7 +62,7 @@ $count = mysqli_num_rows($result);
     </div>
     <?php while($row=$result->fetch_assoc()){ ?>
         <div class="row my-5">
-      <h5>&nbsp;&nbsp;&nbsp;<a href="resultado.php?id=<?php echo $row['pagina_id']; ?>" class="link-primary"><?php echo $row['descripcion']; ?></a></h5>
+      <h5>&nbsp;&nbsp;&nbsp;<a target="_blank" href="resultado.php?id=<?php echo $row['pagina_id']; ?>" class="link-primary"><?php echo $row['descripcion']; ?></a></h5>
     </div>
     <?php } ?>
   </div>

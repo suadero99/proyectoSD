@@ -54,7 +54,7 @@ if(!empty($_GET['mensaje'])){
                 <?php } ?>
                 <div class="collapse" id="collapseLogin">
                     <div class="card card-body" style="max-width: 360px;">
-                        <form action="includes/valida.php" method="post">
+                        <form action="includes/valida.php" method="post" name="fbusqueda">
                             <p>Usuario:</p>
                             <input name="user" type="text">
                             <p>Contraseña:</p>
