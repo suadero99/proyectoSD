@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-06-2022 a las 03:47:15
+-- Tiempo de generación: 01-06-2022 a las 14:53:22
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -186,13 +186,19 @@ ALTER TABLE `anuncio`
 -- Indices de la tabla `click`
 --
 ALTER TABLE `click`
-  ADD PRIMARY KEY (`click_id`);
+  ADD PRIMARY KEY (`click_id`),
+  ADD KEY `click_consulta_id_fk` (`consulta_id`),
+  ADD KEY `click_usuario_id_fk` (`usuario_id`),
+  ADD KEY `click_anuncio_id_fk` (`anuncio_id`);
 
 --
 -- Indices de la tabla `consulta`
 --
 ALTER TABLE `consulta`
-  ADD PRIMARY KEY (`consulta_id`,`usuario_id`,`anuncio_id`);
+  ADD PRIMARY KEY (`consulta_id`,`usuario_id`,`anuncio_id`),
+  ADD KEY `consulta_usuario_id_fk` (`usuario_id`),
+  ADD KEY `consulta_anuncio_id_fk` (`anuncio_id`),
+  ADD KEY `consulta_pagina_id_fk` (`pagina_id`);
 
 --
 -- Indices de la tabla `pagina`
@@ -204,7 +210,8 @@ ALTER TABLE `pagina`
 -- Indices de la tabla `query`
 --
 ALTER TABLE `query`
-  ADD PRIMARY KEY (`query_id`);
+  ADD PRIMARY KEY (`query_id`),
+  ADD KEY `query_usuario_id_fk` (`usuario_id`);
 
 --
 -- Indices de la tabla `usuario`
@@ -251,6 +258,32 @@ ALTER TABLE `query`
 --
 ALTER TABLE `usuario`
   MODIFY `usuario_id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `click`
+--
+ALTER TABLE `click`
+  ADD CONSTRAINT `click_anuncio_id_fk` FOREIGN KEY (`anuncio_id`) REFERENCES `anuncio` (`anuncio_id`),
+  ADD CONSTRAINT `click_consulta_id_fk` FOREIGN KEY (`consulta_id`) REFERENCES `consulta` (`consulta_id`),
+  ADD CONSTRAINT `click_usuario_id_fk` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`usuario_id`);
+
+--
+-- Filtros para la tabla `consulta`
+--
+ALTER TABLE `consulta`
+  ADD CONSTRAINT `consulta_anuncio_id_fk` FOREIGN KEY (`anuncio_id`) REFERENCES `anuncio` (`anuncio_id`),
+  ADD CONSTRAINT `consulta_pagina_id_fk` FOREIGN KEY (`pagina_id`) REFERENCES `pagina` (`pagina_id`),
+  ADD CONSTRAINT `consulta_usuario_id_fk` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`usuario_id`);
+
+--
+-- Filtros para la tabla `query`
+--
+ALTER TABLE `query`
+  ADD CONSTRAINT `query_usuario_id_fk` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`usuario_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
