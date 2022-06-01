@@ -29,6 +29,7 @@
             $_SESSION["nombre"]=nombre($id);
             $_SESSION["apellidos"]=apellidos($id);
             $_SESSION["admin"]=admin($id);
+            $_SESSION["idusuario"]=$id;
             echo $_SESSION["nombre"];
             header("location: ../index.php");
          

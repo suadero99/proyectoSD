@@ -22,6 +22,11 @@
         $admin=consulta($consulta, "admin");
         return $admin;
     }
+    function pagina($idpagina){
+        $consulta="SELECT url FROM pagina WHERE pagina_id='".$idpagina."' LIMIT 1"; 
+        $url=consulta($consulta, "url");
+        return $url;
+    }
     
     function getRealIP(){
 
