@@ -33,17 +33,19 @@ $count = mysqli_num_rows($result);
         <a href="index.php"><img src="img/gugul_logo_240.png" class="rounded" alt="logo" style="max-width: 240px;"></a>
       </div>
       <div class="col-lg-6">
-        <div class="input-group">
         <form action="busqueda.php" method="POST">
-          <input class="form-control" list="opcionesBusqueda" id="busqueda1" placeholder="Escribe para buscar..." value="<?php echo $keyword; ?>" name="keyword">
-          <datalist id="opcionesBusqueda">
-            <option value="Perros">
-            <option value="Gatos">
-            <option value="Flores">
-          </datalist>
-          <input class="btn btn-outline-primary" type="submit" id="botonBusqueda" value="🔎">
+          <div class="input-group">
+            <input class="form-control" list="opcionesBusqueda" id="busqueda1" placeholder="Escribe para buscar..." value="<?php echo $keyword; ?>" name="keyword">
+            <datalist id="opcionesBusqueda">
+              <option value="Gatos">
+              <option value="Perros">
+              <option value="Fiestas">
+              <option value="Ropa">
+              <option value="Flores">
+            </datalist>
+            <input class="btn btn-outline-primary" type="submit" id="botonBusqueda" value="Buscar">
+          </div>
         </form>
-        </div>
       </div>
       
       <div class="col-lg-1">
