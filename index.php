@@ -73,18 +73,20 @@ if(!empty($_GET['mensaje'])){
             <img src="img/gugul_logo_540.png" class="rounded" alt="logo" style="max-width: 540px;">
         </div>
         <div class="row justify-content-center">
-            <div class="input-group justify-content-center">
-                <form action="busqueda.php" method="POST">
+            <form action="busqueda.php" method="POST">
+                <div class="input-group mb-3 justify-content-center">
                     <input class="form-control" list="opcionesBusqueda" id="busqueda1"
-                        placeholder="Escribe para buscar..." style="max-width: 590px;" name="keyword">
+                        placeholder="Escribe para buscar..." style="max-width: 490px;" name="keyword">
                     <datalist id="opcionesBusqueda">
-                        <option value="Perros">
                         <option value="Gatos">
+                        <option value="Perros">
+                        <option value="Fiestas">
+                        <option value="Ropa">
                         <option value="Flores">
                     </datalist>
-                    <input class="btn btn-outline-primary" id="botonBusqueda" type="submit" value="🔎">
-                </form>
-            </div>
+                    <input class="btn btn-outline-primary" id="botonBusqueda" type="submit" value="Buscar">
+                </div>
+            </form>
         </div>
         <div class="row justify-content-center">
             <?php echo $mensaje; ?>
