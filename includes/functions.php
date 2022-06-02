@@ -64,6 +64,18 @@
         return $idanuncio;
     }
 
+    function usuariorandom(){
+        $consulta="SELECT usuario_id FROM usuario ORDER by rand() LIMIT 1";
+        $usuario=consulta($consulta, "usuario_id");
+        return $usuario;
+    }
+
+    function paginarandom($keyword){
+        $consulta="SELECT pagina_id FROM pagina WHERE descripcion LIKE '%$keyword%' ORDER BY rand() LIMIT 1";
+        $pagina=consulta($consulta, "pagina_id");
+        return $pagina;
+    }
+
     function anuncioimagen($idimagen){
         $consulta="SELECT imagen FROM anuncio WHERE anuncio_id='".$idimagen."' LIMIT 1"; 
         $imagen=consulta($consulta, "imagen");

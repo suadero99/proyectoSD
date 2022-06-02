@@ -36,6 +36,7 @@ if(isset($_SESSION['nombre'])){
       </div>
       <div class="col-md-1">
         Hola, <?php echo $nombres; ?>
+        <p><a href="logout.php">Cerrar sesión</a></p>
       </div>
       <div class="col-md-2">
         <img src="img/pp.jpg" class="img-thumbnail" alt="profile pic" style="max-width: 50px; border-radius: 50%;">
@@ -56,6 +57,8 @@ if(isset($_SESSION['nombre'])){
         ?>  
         <p><?php echo $cont;?>.- <?php echo $row['texto'];?> (<?php echo $row['cuenta'];?>)</p>
         <?php $cont++; } ?>
+        <h4>Pruebas de Photon</h4>
+        <a href="pruebaPhoton.php" class="btn btn-primary btn-sm">Ejecutar prueba</a>
       </div>
       <!--Estadísticas-->
       <div class="col-lg-9">
