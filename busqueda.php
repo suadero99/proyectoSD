@@ -5,7 +5,9 @@ include("includes/conectbd.php");
 //Paso 1: Obtener la palabra clave de la búsqueda
 $keyword=$_POST["keyword"];
 //Paso 3: Insercion del query del usuario
-//Pendiente de momento
+$idusuario=$_SESSION["idusuario"];
+$ipusuario=getRealIP();
+insertaQuery($keyword, $idusuario, $ipusuario);
 //Paso 3: Buscar contenido relacionado con SQL en la tabla de pagina y conteo
 $consultaresultados="SELECT pagina_id, descripcion FROM pagina WHERE descripcion LIKE '%$keyword%'";
 $result = mysqli_query($conexion,$consultaresultados);

@@ -6,6 +6,9 @@ include("includes/conectbd.php");
 //Paso 1: Obtener la palabra clave de la búsqueda
 $idpagina=$_GET["id"];
 $url=pagina($idpagina);
+$idusuario=$_SESSION["idusuario"];
+$idanuncio=anunciorandom($idusuario);
+$anuncioimagen=anuncioimagen($idanuncio);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -29,8 +32,8 @@ $url=pagina($idpagina);
     </script>
 <iframe src="<?php echo $url; ?>"></iframe>
 <div class="menu">
-<a href="google.com">
-  <img src="https://monterreyrock.com/wp-content/uploads/2022/04/FOSZRE_WQAIPOkG.jpg" alt="" class="imagen">
+<a target="_blank" href="clic.php?id=<?php echo $idanuncio; ?>">
+  <img src="img/<?php echo $anuncioimagen; ?>" alt="" class="imagen">
 </a>
 </div>
 </body>
