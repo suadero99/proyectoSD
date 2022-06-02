@@ -49,6 +49,11 @@
         inserta($inserta);
     }
 
+    function insertaHistorial($idusuario, $idpagina){
+        $inserta="INSERT INTO historialusuario(usuario_id, pagina_id) VALUES('$idusuario', '$idpagina') ";
+        inserta($inserta);
+    }
+
     function anunciorandom($idusuario){
         //Primero selecciono algo que el usuario haya buscado con anterioridad
         $consulta="SELECT texto FROM query WHERE usuario_id=$idusuario ORDER by rand() LIMIT 1";

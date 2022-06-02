@@ -5,7 +5,11 @@ include("includes/conectbd.php");
 //Paso 1: Obtener la palabra clave de la búsqueda
 $keyword=$_POST["keyword"];
 //Paso 3: Insercion del query del usuario
-$idusuario=$_SESSION["idusuario"];
+if(isset($_SESSION["idusuario"])){
+  $idusuario=$_SESSION["idusuario"];
+} else {
+  $idusuario=0;
+}
 $ipusuario=getRealIP();
 insertaQuery($keyword, $idusuario, $ipusuario);
 //Paso 3: Buscar contenido relacionado con SQL en la tabla de pagina y conteo

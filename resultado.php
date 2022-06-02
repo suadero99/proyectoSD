@@ -6,9 +6,14 @@ include("includes/conectbd.php");
 //Paso 1: Obtener la palabra clave de la búsqueda
 $idpagina=$_GET["id"];
 $url=pagina($idpagina);
-$idusuario=$_SESSION["idusuario"];
-$idanuncio=anunciorandom($idusuario);
-$anuncioimagen=anuncioimagen($idanuncio);
+if(isset($_SESSION["idusuario"])){
+    $idusuario=$_SESSION["idusuario"];
+} else {
+    $idusuario=0;
+}
+$idanuncio=anunciorandom($idusuario); //Photon 
+$anuncioimagen=anuncioimagen($idanuncio);   //Google ads
+insertaHistorial($idusuario, $idpagina);
 ?>
 <!DOCTYPE html>
 <html lang="es">

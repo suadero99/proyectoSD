@@ -51,6 +51,7 @@ if(!empty($_GET['mensaje'])){
                 <p>
                     <a href="panel.php" class="btn btn-primary">Panel de Administrador</a>
                 </p>
+                <p><a href="logout.php">Cerrar sesión</a></p>
                 <?php } ?>
                 <div class="collapse" id="collapseLogin">
                     <div class="card card-body" style="max-width: 360px;">
@@ -76,7 +77,7 @@ if(!empty($_GET['mensaje'])){
             <form action="busqueda.php" method="POST">
                 <div class="input-group mb-3 justify-content-center">
                     <input class="form-control" list="opcionesBusqueda" id="busqueda1"
-                        placeholder="Escribe para buscar..." style="max-width: 490px;" name="keyword">
+                        placeholder="Escribe para buscar..." style="max-width: 490px;" name="keyword" required>
                     <datalist id="opcionesBusqueda">
                         <option value="Gatos">
                         <option value="Perros">

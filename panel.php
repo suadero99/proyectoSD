@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("includes/functions.php");
+include("includes/conectbd.php");
 if(isset($_SESSION['nombre'])){
     $nombres=$_SESSION['nombre'];
 } else {
@@ -46,10 +47,15 @@ if(isset($_SESSION['nombre'])){
       <!--Consultas más realizadas-->
       <div class="col-md-3 text-center">
         <h5>Consultas más realizadas</h5>
-        <p>1._________________________</p>
-        <p>2._________________________</p>
-        <p>3._________________________</p>
-        <p>4._________________________</p>
+        <?php 
+        //Consulta para conocer las búsquedas más realizadas por los usuarios
+        $consultabusquedas="SELECT COUNT(*) AS cuenta, texto FROM query GROUP BY texto ORDER BY COUNT(*) DESC LIMIT 5";
+        $result = mysqli_query($conexion,$consultabusquedas);
+        $cont=1;
+        while($row=$result->fetch_assoc()){
+        ?>  
+        <p><?php echo $cont;?>.- <?php echo $row['texto'];?> (<?php echo $row['cuenta'];?>)</p>
+        <?php $cont++; } ?>
       </div>
       <!--Estadísticas-->
       <div class="col-lg-9">
@@ -60,29 +66,53 @@ if(isset($_SESSION['nombre'])){
           <!--Nombre empresa-->
           <div class="card">
             <div class="card-body text-center">
-              <h5 class="card-title">Empresa</h5>
-              <p class="card-text">Nombre de empresa</p>
+              <h5 class="card-title">Descripción anuncio</h5>
             </div>
           </div>
           <!--Imagen de anuncio-->
           <div class="card">
             <div class="card-body text-center">
               <h5 class="card-title">Anuncio mostrado</h5>  
-              <img src="img/prueba.jpg" class="rounded" alt="anuncio mostrado">
-              <p class="card-text"></p>
-              <div class="card-footer">
-                <small class="text-muted">Imagen perteneciente al anuncio</small>
-              </div>
             </div>
           </div>
           <!--Contador de clicks-->
           <div class="card">
             <div class="card-body text-center">
               <h5 class="card-title">Número de clicks</h5>
-              <p class="card-text">#### clicks</p>
             </div>
           </div>
         </div>
+       <?php 
+       //Consulta para conocer los anuncios que han sido clickeados y el total de veces
+       $consultatotal="SELECT COUNT(*) AS cuenta, nombre, imagen FROM anuncio a
+                      JOIN click c on a.anuncio_id=c.anuncio_id
+                      GROUP BY a.anuncio_id
+                      ORDER BY COUNT(*) DESC";
+      $result = mysqli_query($conexion,$consultatotal);
+      while($row=$result->fetch_assoc()){
+      ?> 
+        <div class="card-group">
+          <!--Nombre empresa-->
+          <div class="card">
+            <div class="card-body text-center">
+              <p class="card-text"><?php echo $row['nombre'];?></p>
+            </div>
+          </div>
+          <!--Imagen de anuncio-->
+          <div class="card">
+            <div class="card-body text-center">
+              <img src="img/<?php echo $row['imagen'];?>" class="rounded" alt="anuncio mostrado" width="100">
+              <p class="card-text"></p>
+            </div>
+          </div>
+          <!--Contador de clicks-->
+          <div class="card">
+            <div class="card-body text-center"
+              <p class="card-text"><?php echo $row['cuenta'];?> clicks</p>
+            </div>
+          </div>
+        </div>
+        <?php } ?>
       </div>
     </div>
   </div>
